@@ -51,6 +51,20 @@ ul {
   color: rgb(145, 145, 145);
 }
 
+.creaLista {
+  background-color: rgb(60, 211, 60);
+  color: black;
+  border: 1px solid rgb(60, 211, 60);
+  border-radius: 20px;
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.creaLista:hover {
+  background-color: white;
+  border: 1px solid white;
+}
+
 .signup-btn {
   background-color: white;
   color: black;
