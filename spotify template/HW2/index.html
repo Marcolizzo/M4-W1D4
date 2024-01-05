@@ -248,7 +248,7 @@
           "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query
         )
           .then((raw) => {
-            return (pippo = raw.json());
+            return raw.json();
           })
           .then((risultato) => {
             let canzoni = risultato.data;
