@@ -241,7 +241,7 @@
     ></script>
 
     <script>
-      const fetchMusica = (id, query) => {
+      const fetchMusica = (query, id) => {
         const container = document.querySelector(`#${id}`);
         const section = document.querySelector(`#${id}Section`);
         fetch(
@@ -253,7 +253,7 @@
           .then((risultato) => {
             let canzoni = risultato.data;
             container.classList.remove("d-none");
-            for (let i = 0; i < canzoni.slice(0, 4).lenght; i++) {
+            for (let i = 0; i < canzoni.slice(0, 4).length; i++) {
               const immagini = canzoni[i];
               section.innerHTML += `<div class='col col-3'> <img class='w-100' src='${immagini.album.cover_xl}'/> </div>`;
             }
@@ -261,11 +261,13 @@
           .catch((err) => console.log(err));
       };
 
-      window.onload = () => {
+      const creaListaButton = document.querySelector(".creaLista");
+      const eseguiFunzioni = () => {
         fetchMusica("eminem", "eminem");
         fetchMusica("queen", "queen");
         fetchMusica("metallica", "metallica");
       };
+      creaListaButton.addEventListener("click", eseguiFunzioni);
     </script>
   </body>
 </html>
